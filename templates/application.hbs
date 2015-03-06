@@ -1,0 +1,17 @@
+<nav class='navbar navbar-default'>
+  <div class="container">
+    {{#link-to 'folders'}}<a class="navbar-brand">Inbox</a>{{/link-to}}
+
+    <ul class='nav navbar-nav navbar-list'>
+      <li><a href="#">Create Folder</a></li>
+      <li><a href="#">Create Email</a></li>
+      <li><a href="#">About</a></li>
+    </ul>
+  </div>
+</nav>
+
+<body>
+  <div class="container">
+    {{outlet}}
+  </div>
+</body>
