@@ -11,19 +11,13 @@
 
 	<div class='form-group'>
 		<label for="subject">Subject</label>
-		{{textarea  rows='10' value=subject id="Subject" class='form-control'}}
+		{{input value=subject id="subject" class='form-control'}}
+	</div>
+
+	<div class='form-group'>
+		<label for="Body">Body</label>
+		{{textarea  rows='10' value=body id="body" class='form-control'}}
 	</div>
 	
 	<a href='#' {{action 'sendEmail'}}><img  class='img-icon' src='img/send_email.png'></a>
 </form>
-
-
-<!-- 
-Email.Email = DS.Model.extend({
-  subject: DS.attr(),
-  body: DS.attr(),
-  sender: DS.attr(),
-  recipient: DS.attr(), 
-  folder: DS.belongsTo('folder', {async: true})
-});
- -->
