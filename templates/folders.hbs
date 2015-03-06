@@ -2,8 +2,10 @@
     
   <div class="row">
     <div class="col-md-12">
-      <img src='img/folder-128.png'>
-      <span class='folder-name'>{{folder.name}}</span>
+      {{#link-to 'folder' folder.id}}
+        <img src='img/folder-128.png'>
+        <span class='folder-name'>{{folder.name}}</span>
+      {{/link-to}}
     </div>
   </div>
 {{/each}}
