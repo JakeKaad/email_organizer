@@ -1,6 +1,7 @@
 Email.NewEmailRoute = Ember.Route.extend({
 	model: function() {
-		var email = this.store.createRecord('email');
+		var email = this.store.find('email');
 		return email;
-	}
+	}, 
+	controllerName: 'folder'
 })

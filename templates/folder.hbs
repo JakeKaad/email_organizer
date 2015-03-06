@@ -1,5 +1,48 @@
 <h1>Emails in {{name}}:</h1>
 
+{{#each email in emails}}
+<div class="row">
+    <div class="col-md-12">
+      {{#link-to 'email' email.id}}
+        <img src='img/email.png'>
+        <div>
+          <span class='email-info'>Subject: {{email.subject}}</span> <br/>
+          <span class='email-info'>From: {{email.sender}}</span>
+        </div>
+      {{/link-to}}
+    </div>
+  </div>
+  
+  <img src='img/email.png'>
+
+{{/each}}
+
+
+<form>
+  <div class='form-group'>
+    <label for="subject">Recipient</label>
+    {{input value=recipient id="Recipient" class='form-control'}}
+  </div>
+
+  <div class='form-group'>
+    <label for="sender">Sender</label>
+    {{input value=sender id="Sender" class='form-control'}}
+  </div>
+
+  <div class='form-group'>
+    <label for="subject">Subject</label>
+    {{input value=subject id="subject" class='form-control'}}
+  </div>
+
+  <div class='form-group'>
+    <label for="Body">Body</label>
+    {{textarea  rows='10' value=body id="body" class='form-control'}}
+  </div>
+  
+  <a href='#' {{action 'sendEmail'}}><img  class='img-icon' src='img/send_email.png'></a>
+</form>
+
+
 
 {{#link-to 'new-email'}} <img src='img/new_email.jpeg'> {{/link-to}} <span class='folder-name'>New Email </span>
 {{outlet}}
