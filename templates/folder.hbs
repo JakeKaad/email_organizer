@@ -17,32 +17,31 @@
 
 {{/each}}
 
+{{#if isCreating}}
+  <form>
+    <div class='form-group'>
+      <label for="subject">Recipient</label>
+      {{input value=recipient id="Recipient" class='form-control'}}
+    </div>
 
-<form>
-  <div class='form-group'>
-    <label for="subject">Recipient</label>
-    {{input value=recipient id="Recipient" class='form-control'}}
-  </div>
+    <div class='form-group'>
+      <label for="sender">Sender</label>
+      {{input value=sender id="Sender" class='form-control'}}
+    </div>
 
-  <div class='form-group'>
-    <label for="sender">Sender</label>
-    {{input value=sender id="Sender" class='form-control'}}
-  </div>
+    <div class='form-group'>
+      <label for="subject">Subject</label>
+      {{input value=subject id="subject" class='form-control'}}
+    </div>
 
-  <div class='form-group'>
-    <label for="subject">Subject</label>
-    {{input value=subject id="subject" class='form-control'}}
-  </div>
+    <div class='form-group'>
+      <label for="Body">Body</label>
+      {{textarea  rows='10' value=body id="body" class='form-control'}}
+    </div>
+    
+    <a href='#' {{action 'sendEmail'}}><img  class='img-icon' src='img/send_email.png'></a>
+  </form>
+{{/if}}
 
-  <div class='form-group'>
-    <label for="Body">Body</label>
-    {{textarea  rows='10' value=body id="body" class='form-control'}}
-  </div>
-  
-  <a href='#' {{action 'sendEmail'}}><img  class='img-icon' src='img/send_email.png'></a>
-</form>
-
-
-
-{{#link-to 'new-email'}} <img src='img/new_email.jpeg'> {{/link-to}} <span class='folder-name'>New Email </span>
+<a href='#' {{action 'creating'}} > <img src='img/new_email.jpeg'><span class='folder-name'>New Email </span></a>
 {{outlet}}

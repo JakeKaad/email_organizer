@@ -1,10 +1,13 @@
 Email.FolderController = Ember.ObjectController.extend ({
-	actions: { 
-		sendEmail: function() {
-			recipient = this.get('recipient');
-			sender = this.get('sender');
-			subject = this.get('subject');
-			body = this.get('body');
+  needs: 'folder',
+  isCreating: false,
+  actions: { 
+    sendEmail: function() {
+      isCreating: false
+      recipient = this.get('recipient');
+      sender = this.get('sender');
+      subject = this.get('subject');
+      body = this.get('body');
 
       email = this.store.createRecord('email', {
         recipient: recipient,
@@ -19,11 +22,13 @@ Email.FolderController = Ember.ObjectController.extend ({
       this.set('subject', '');
       this.set('body', '');
       email.save();
-      debugger;
       folder.save();
 
       this.transitionToRoute('folder', folder.id);
+    },
+    creating: function() {
+      this.set('isCreating', true);
     }
   }
-		
+    
 });
