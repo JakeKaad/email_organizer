@@ -1,0 +1,10 @@
+<h3>Create a new Folder</h3>
+
+<form>
+  <div class="form-group">
+    <label for="folderName">Folder Name</label>
+    {{input value=name id="name" class="form-control"}}
+  </div>
+
+  <button class="btn btn-info" {{action "createFolder"}}>Create</button>
+</form>

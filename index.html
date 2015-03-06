@@ -19,11 +19,14 @@
   <script src="store.js"></script>
 
   <script src="routes/email.js"></script>
-  <script src='routes/folders.js'></script>
+  <script src='routes/folders.js'></script> 
+  <script src='routes/folder.js'></script>
   <script src='routes/emails.js'></script>
+  <script src='routes/new-folder.js'></script>
 
 
   <script src="controllers/email.js"></script>
+  <script src="controllers/new-folder.js"></script>
  
 
   <script src="models/folder.js"></script>
@@ -32,7 +35,7 @@
 
   <script>
     EmberHandlebarsLoader.loadTemplates([
-       'application', 'folders'
+       'application', 'folders', 'new-folder', 'folder'
       ]);
   </script>
 

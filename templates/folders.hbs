@@ -1,0 +1,14 @@
+{{#each folder in model}}
+    
+  <div class="row">
+    <div class="col-md-12">
+      <img src='img/folder-128.png'>
+      <span class='folder-name'>{{folder.name}}</span>
+    </div>
+  </div>
+{{/each}}
+
+
+
+{{#link-to 'new-folder'}}<img src="img/add_folder.png">{{/link-to}}<span class='folder-name'>New</span>
+{{outlet}}
